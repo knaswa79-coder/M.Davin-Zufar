@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata M. Davin Zufar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0fdf4; /* Warna hijau muda */
+            color: #166534; /* Warna teks hijau tua */
+        }
+        .container {
+            max-width: 960px;
+        }
+        .card {
+            background-color: #dcfce7; /* Hijau lebih terang */
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+        .btn-language {
+            background-color: #22c55e; /* Hijau cerah */
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .btn-language:hover {
+            transform: scale(1.05);
+        }
+        .text-jawa {
+            font-family: 'Javanese Text', sans-serif; /* Perlu font yang mendukung Aksara Jawa */
+        }
+        .table-data {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table-data th, .table-data td {
+            border: 1px solid #166534;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .table-data th {
+            background-color: #86efac;
+        }
+        .section-title {
+            color: #14532d;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="p-8">
+
+    <div class="container mx-auto">
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row items-center justify-between p-6 mb-8 card">
+            <div class="flex items-center space-x-4">
+                <img src="davin.png" alt="Avatar" class="rounded-full border-4 border-[#166534]">
+                <div>
+                    <h1 id="header-name" class="text-3xl font-bold">M. Davin Zufar</h1>
+                    <p id="header-student" class="text-xl">Siswa SMK Ma'arif NU Tirto</p>
+                </div>
+            </div>
+            <div class="mt-4 md:mt-0 flex space-x-2">
+                <button class="btn-language" data-lang="id">ID</button>
+                <button class="btn-language" data-lang="en">EN</button>
+                <button class="btn-language" data-lang="jv">JV</button>
+                <button class="btn-language" data-lang="ar">AR</button>
+            </div>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Biodata Diri -->
+            <section class="card col-span-1 md:col-span-2 lg:col-span-1">
+                <h2 id="title-biodata" class="section-title text-2xl mb-4">Biodata Diri</h2>
+                <ul class="space-y-2 text-lg">
+                    <li><strong id="label-name">Nama</strong>: M. Davin Zufar</li>
+                    <li><strong id="label-birth">Tempat, tanggal lahir</strong>: Pekalongan, 4 Februari 2009</li>
+                    <li><strong id="label-address">Alamat</strong>: Tirto, Mediuri, Pekalongan</li>
+                    <li><strong id="label-gender">Jenis Kelamin</strong>: Laki-laki</li>
+                    <li><strong id="label-religion">Agama</strong>: Islam</li>
+                    <li><strong id="label-nationality">Kewarganegaraan</strong>: Indonesia</li>
+                    <li><strong id="label-status">Status</strong>: Pelajar</li>
+                    <li><strong id="label-email">Email</strong>: zupar@gmail.com</li>
+                    <li><strong id="label-phone">No Telpon</strong>: 08952561xxxx</li>
+                </ul>
+            </section>
+
+            <!-- Pendidikan -->
+            <section class="card col-span-1">
+                <h2 id="title-education" class="section-title text-2xl mb-4">Pendidikan</h2>
+                <ul class="space-y-2 text-lg list-disc list-inside">
+                    <li>SDN Tirto 03 (2015-2021)</li>
+                    <li>Ponpes PDF Walindo (2021-2024)</li>
+                    <li>SMK Ma'arif NU Tirto (sekarang)</li>
+                </ul>
+            </section>
+
+            <!-- Keterampilan -->
+            <section class="card col-span-1">
+                <h2 id="title-skills" class="section-title text-2xl mb-4">Keterampilan</h2>
+                <p id="text-skills" class="text-lg">Di bidang TKJ, saya memiliki keterampilan untuk membuat website beserta isinya.</p>
+            </section>
+
+            <!-- Riwayat Hidup / Pengalaman -->
+            <section class="card col-span-1 md:col-span-2">
+                <h2 id="title-experience" class="section-title text-2xl mb-4">Riwayat Hidup / Pengalaman</h2>
+                <p id="text-experience" class="text-lg">Mengikuti studytour.</p>
+            </section>
+
+            <!-- Prestasi -->
+            <section class="card col-span-1 md:col-span-2">
+                <h2 id="title-achievements" class="section-title text-2xl mb-4">Prestasi</h2>
+                <ul class="space-y-2 text-lg list-disc list-inside">
+                    <li>Peringkat 2 di kelas 2 SD (akademik)</li>
+                    <li>Juara 3 lomba balap karung (non-akademik)</li>
+                </ul>
+            </section>
+
+            <!-- Statistik Hobi -->
+            <section class="card col-span-1 md:col-span-1">
+                <h2 id="title-hobbies-chart" class="section-title text-2xl mb-4">Statistik Hobi</h2>
+                <div class="h-64">
+                    <canvas id="hobbies-chart"></canvas>
+                </div>
+            </section>
+
+            <!-- Statistik Minat (Radar Chart) -->
+            <section class="card col-span-1 md:col-span-1">
+                <h2 id="title-interests-radar" class="section-title text-2xl mb-4">Minat</h2>
+                <div class="h-64">
+                    <canvas id="interests-radar-chart"></canvas>
+                </div>
+            </section>
+
+            <!-- Statistik Prestasi (Bar Chart) -->
+            <section class="card col-span-1 md:col-span-1">
+                <h2 id="title-achievements-chart" class="section-title text-2xl mb-4">Statistik Prestasi</h2>
+                <div class="h-64">
+                    <canvas id="achievements-bar-chart"></canvas>
+                </div>
+            </section>
+            
+            <!-- Moto -->
+            <section class="card col-span-1 md:col-span-2 lg:col-span-3">
+                <h2 id="title-moto" class="section-title text-2xl mb-4">Moto</h2>
+                <p id="text-moto" class="text-lg italic">"Jadilah diri sendiri"</p>
+            </section>
+            
+            <!-- Harapan Masa Depan -->
+            <section class="card col-span-1 md:col-span-2 lg:col-span-3">
+                <h2 id="title-hopes" class="section-title text-2xl mb-4">Harapan Masa Depan</h2>
+                <p id="text-hopes" class="text-lg">Bisa membahagiakan kedua orang tua.</p>
+            </section>
+
+            <!-- Tabel Data -->
+            <section class="card col-span-1 md:col-span-2 lg:col-span-3">
+                <h2 id="title-table" class="section-title text-2xl mb-4">Tabel Data</h2>
+                <div class="overflow-x-auto">
+                    <table class="table-data">
+                        <thead>
+                            <tr>
+                                <th id="table-header-category">Kategori</th>
+                                <th id="table-header-item">Item</th>
+                                <th id="table-header-value">Nilai</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="table-category-achievement">Prestasi</td>
+                                <td id="table-item-total">Jumlah Prestasi</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td id="table-category-academic">Prestasi Akademik</td>
+                                <td id="table-item-academic">Jumlah</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td id="table-category-non-academic">Prestasi Non-Akademik</td>
+                                <td id="table-item-non-academic">Jumlah</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td id="table-category-academic-percentage">Presentasi Prestasi Akademik</td>
+                                <td id="table-item-percentage">Persentase</td>
+                                <td>50%</td>
+                            </tr>
+                            <tr>
+                                <td id="table-category-hobbies">Hobi</td>
+                                <td id="table-item-soccer">Sepak Bola</td>
+                                <td>15%</td>
+                            </tr>
+                            <tr>
+                                <td id="table-category-hobbies-2">Hobi</td>
+                                <td id="table-item-badminton">Badminton</td>
+                                <td>35%</td>
+                            </tr>
+                            <tr>
+                                <td id="table-category-hobbies-3">Hobi</td>
+                                <td id="table-item-gym">Nge Gym</td>
+                                <td>50%</td>
+                            </tr>
+                            <tr>
+                                <td id="table-category-hobbies-mode">Modus Hobi</td>
+                                <td id="table-item-mode">Hobi</td>
+                                <td>Nge Gym</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-8 p-6 card text-center">
+            <p id="footer-note" class="italic mb-2">"Belajar dari masa lalu, hiduplah untuk hari ini, dan biarkan dunia tahu siapa dirimu"</p>
+            <p id="footer-signature">- Davin</p>
+        </footer>
+    </div>
+
+    <script>
+        const translations = {
+            id: {
+                header: { name: "M. Davin Zufar", student: "Siswa SMK Ma'arif NU Tirto" },
+                biodata: { title: "Biodata Diri", name: "Nama", birth: "Tempat, tanggal lahir", address: "Alamat", gender: "Jenis Kelamin", religion: "Agama", nationality: "Kewarganegaraan", status: "Status", email: "Email", phone: "No Telpon" },
+                education: { title: "Pendidikan" },
+                skills: { title: "Keterampilan", text: "Di bidang TKJ, saya memiliki keterampilan untuk membuat website beserta isinya." },
+                experience: { title: "Riwayat Hidup / Pengalaman", text: "Mengikuti studytour." },
+                achievements: { title: "Prestasi", academic: "Peringkat 2 di kelas 2 SD (akademik)", nonAcademic: "Juara 3 lomba balap karung (non-akademik)" },
+                hobbies: { title: "Statistik Hobi" },
+                interests: { title: "Minat" },
+                achievementsChart: { title: "Statistik Prestasi" },
+                moto: { title: "Moto", text: "\"Jadilah diri sendiri\"" },
+                hopes: { title: "Harapan Masa Depan", text: "Bisa membahagiakan kedua orang tua." },
+                table: {
+                    title: "Tabel Data",
+                    header: { category: "Kategori", item: "Item", value: "Nilai" },
+                    rows: {
+                        achievement: "Prestasi", total: "Jumlah Prestasi",
+                        academic: "Prestasi Akademik", academicCount: "Jumlah",
+                        nonAcademic: "Prestasi Non-Akademik", nonAcademicCount: "Jumlah",
+                        academicPercentage: "Presentasi Prestasi Akademik", percentage: "Persentase",
+                        hobbies: "Hobi", soccer: "Sepak Bola", badminton: "Badminton", gym: "Nge Gym",
+                        hobbiesMode: "Modus Hobi", mode: "Hobi"
+                    }
+                },
+                footer: { note: "\"Belajar dari masa lalu, hiduplah untuk hari ini, dan biarkan dunia tahu siapa dirimu\"", signature: "- Davin" }
+            },
+            en: {
+                header: { name: "M. Davin Zufar", student: "SMK Ma'arif NU Tirto Student" },
+                biodata: { title: "Personal Data", name: "Name", birth: "Place, date of birth", address: "Address", gender: "Gender", religion: "Religion", nationality: "Nationality", status: "Status", email: "Email", phone: "Phone No." },
+                education: { title: "Education" },
+                skills: { title: "Skills", text: "In the field of computer and network engineering (TKJ), I have the skills to create websites and their content." },
+                experience: { title: "Life History / Experience", text: "Participated in a study tour." },
+                achievements: { title: "Achievements", academic: "2nd place in 2nd grade (academic)", nonAcademic: "3rd place in sack race competition (non-academic)" },
+                hobbies: { title: "Hobbies Statistics" },
+                interests: { title: "Interests" },
+                achievementsChart: { title: "Achievement Statistics" },
+                moto: { title: "Motto", text: "\"Be yourself\"" },
+                hopes: { title: "Future Hopes", text: "To make my parents happy." },
+                table: {
+                    title: "Data Table",
+                    header: { category: "Category", item: "Item", value: "Value" },
+                    rows: {
+                        achievement: "Achievement", total: "Total Achievements",
+                        academic: "Academic Achievement", academicCount: "Count",
+                        nonAcademic: "Non-Academic Achievement", nonAcademicCount: "Count",
+                        academicPercentage: "Academic Achievement Percentage", percentage: "Percentage",
+                        hobbies: "Hobbies", soccer: "Soccer", badminton: "Badminton", gym: "Gym",
+                        hobbiesMode: "Hobbies Mode", mode: "Hobby"
+                    }
+                },
+                footer: { note: "\"Learn from the past, live for today, and let the world know who you are\"", signature: "- Davin" }
+            },
+            jv: {
+                header: { name: "M. Davin Zufar", student: "Siswa SMK Ma'arif NU Tirto" },
+                biodata: { title: "Biodata Pribadi", name: "Jeneng", birth: "Panggonan, tanggal lair", address: "Alamat", gender: "Jinis Kelamin", religion: "Agama", nationality: "Kewarganegaraan", status: "Status", email: "Email", phone: "No. Telpon" },
+                education: { title: "Pendhidhikan" },
+                skills: { title: "Kawasisan", text: "Ing babagan TKJ, aku duwe kawasisan kanggo nggawe website sak isine." },
+                experience: { title: "Riwayat Urip / Pengalaman", text: "Melu studytour." },
+                achievements: { title: "Prestasi", academic: "Peringkat 2 ing kelas 2 SD (akademik)", nonAcademic: "Juara 3 lomba balap karung (non-akademik)" },
+                hobbies: { title: "Statistik Hobi" },
+                interests: { title: "Minat" },
+                achievementsChart: { title: "Statistik Prestasi" },
+                moto: { title: "Moto", text: "\"Dadi awakmu dewe\"" },
+                hopes: { title: "Pangarep-arep Masa Depan", text: "Bisa nyenengake wong tuwa loro." },
+                table: {
+                    title: "Tabel Data",
+                    header: { category: "Kategori", item: "Item", value: "Nilai" },
+                    rows: {
+                        achievement: "Prestasi", total: "Jumlah Prestasi",
+                        academic: "Prestasi Akademik", academicCount: "Jumlah",
+                        nonAcademic: "Prestasi Non-Akademik", nonAcademicCount: "Jumlah",
+                        academicPercentage: "Presentasi Prestasi Akademik", percentage: "Persentase",
+                        hobbies: "Hobi", soccer: "Bal-balan", badminton: "Badminton", gym: "Nge gym",
+                        hobbiesMode: "Modus Hobi", mode: "Hobi"
+                    }
+                },
+                footer: { note: "\"Sinau saka masa lalu, urip kanggo dina iki, lan wenehake donya sapa awakmu iku\"", signature: "- Davin" }
+            },
+            ar: {
+                header: { name: "م. دافين زوفر", student: "طالب في SMK Ma'arif NU Tirto" },
+                biodata: { title: "بيانات شخصية", name: "الاسم", birth: "مكان وتاريخ الميلاد", address: "العنوان", gender: "الجنس", religion: "الدين", nationality: "الجنسية", status: "الحالة", email: "البريد الإلكتروني", phone: "رقم الهاتف" },
+                education: { title: "التعليم" },
+                skills: { title: "المهارات", text: "في مجال هندسة الكمبيوتر والشبكات (TKJ)، لدي المهارات اللازمة لإنشاء المواقع ومحتواها." },
+                experience: { title: "السيرة الذاتية / الخبرة", text: "شاركت في جولة دراسية." },
+                achievements: { title: "الإنجازات", academic: "المركز الثاني في الصف الثاني الابتدائي (أكاديمي)", nonAcademic: "المركز الثالث في سباق الأكياس (غير أكاديمي)" },
+                hobbies: { title: "إحصائيات الهوايات" },
+                interests: { title: "الاهتمامات" },
+                achievementsChart: { title: "إحصائيات الإنجازات" },
+                moto: { title: "الشعار", text: "\"كن على طبيعتك\"" },
+                hopes: { title: "آمال المستقبل", text: "أن أجعل والدي سعيدين." },
+                table: {
+                    title: "جدول البيانات",
+                    header: { category: "الفئة", item: "البند", value: "القيمة" },
+                    rows: {
+                        achievement: "الإنجازات", total: "إجمالي الإنجازات",
+                        academic: "الإنجاز الأكاديمي", academicCount: "العدد",
+                        nonAcademic: "الإنجاز غير الأكاديمي", nonAcademicCount: "العدد",
+                        academicPercentage: "نسبة الإنجاز الأكاديمي", percentage: "النسبة المئوية",
+                        hobbies: "الهوايات", soccer: "كرة القدم", badminton: "تنس الريشة", gym: "الجيم",
+                        hobbiesMode: "الوضع", mode: "الهواية"
+                    }
+                },
+                footer: { note: "\"تعلم من الماضي، عش لليوم، ودع العالم يعرف من أنت\"", signature: "- دافين" }
+            }
+        };
+
+        const languageButtons = document.querySelectorAll('.btn-language');
+        const updateText = (lang) => {
+            const data = translations[lang];
+            
+            // Aksara Jawa and Latin
+            const textJawa = (lang === 'jv') ? 'text-jawa' : '';
+            document.body.className = `p-8 ${textJawa}`;
+
+            // Header
+            document.getElementById('header-name').textContent = data.header.name;
+            document.getElementById('header-student').textContent = data.header.student;
+
+            // Biodata
+            document.getElementById('title-biodata').textContent = data.biodata.title;
+            document.getElementById('label-name').textContent = data.biodata.name;
+            document.getElementById('label-birth').textContent = data.biodata.birth;
+            document.getElementById('label-address').textContent = data.biodata.address;
+            document.getElementById('label-gender').textContent = data.biodata.gender;
+            document.getElementById('label-religion').textContent = data.biodata.religion;
+            document.getElementById('label-nationality').textContent = data.biodata.nationality;
+            document.getElementById('label-status').textContent = data.biodata.status;
+            document.getElementById('label-email').textContent = data.biodata.email;
+            document.getElementById('label-phone').textContent = data.biodata.phone;
+
+            // Education
+            document.getElementById('title-education').textContent = data.education.title;
+            
+            // Skills
+            document.getElementById('title-skills').textContent = data.skills.title;
+            document.getElementById('text-skills').textContent = data.skills.text;
+            
+            // Experience
+            document.getElementById('title-experience').textContent = data.experience.title;
+            document.getElementById('text-experience').textContent = data.experience.text;
+
+            // Achievements
+            document.getElementById('title-achievements').textContent = data.achievements.title;
+            document.querySelectorAll('#achievements-list li')[0].textContent = data.achievements.academic;
+            document.querySelectorAll('#achievements-list li')[1].textContent = data.achievements.nonAcademic;
+
+            // Charts
+            document.getElementById('title-hobbies-chart').textContent = data.hobbies.title;
+            document.getElementById('title-interests-radar').textContent = data.interests.title;
+            document.getElementById('title-achievements-chart').textContent = data.achievementsChart.title;
+
+            // Moto
+            document.getElementById('title-moto').textContent = data.moto.title;
+            document.getElementById('text-moto').textContent = data.moto.text;
+
+            // Hopes
+            document.getElementById('title-hopes').textContent = data.hopes.title;
+            document.getElementById('text-hopes').textContent = data.hopes.text;
+            
+            // Table
+            document.getElementById('title-table').textContent = data.table.title;
+            document.getElementById('table-header-category').textContent = data.table.header.category;
+            document.getElementById('table-header-item').textContent = data.table.header.item;
+            document.getElementById('table-header-value').textContent = data.table.header.value;
+
+            document.getElementById('table-category-achievement').textContent = data.table.rows.achievement;
+            document.getElementById('table-item-total').textContent = data.table.rows.total;
+            document.getElementById('table-category-academic').textContent = data.table.rows.academic;
+            document.getElementById('table-item-academic').textContent = data.table.rows.academicCount;
+            document.getElementById('table-category-non-academic').textContent = data.table.rows.nonAcademic;
+            document.getElementById('table-item-non-academic').textContent = data.table.rows.nonAcademicCount;
+            document.getElementById('table-category-academic-percentage').textContent = data.table.rows.academicPercentage;
+            document.getElementById('table-item-percentage').textContent = data.table.rows.percentage;
+            document.getElementById('table-category-hobbies').textContent = data.table.rows.hobbies;
+            document.getElementById('table-item-soccer').textContent = data.table.rows.soccer;
+            document.getElementById('table-category-hobbies-2').textContent = data.table.rows.hobbies;
+            document.getElementById('table-item-badminton').textContent = data.table.rows.badminton;
+            document.getElementById('table-category-hobbies-3').textContent = data.table.rows.hobbies;
+            document.getElementById('table-item-gym').textContent = data.table.rows.gym;
+            document.getElementById('table-category-hobbies-mode').textContent = data.table.rows.hobbiesMode;
+            document.getElementById('table-item-mode').textContent = data.table.rows.mode;
+
+            // Footer
+            document.getElementById('footer-note').textContent = data.footer.note;
+            document.getElementById('footer-signature').textContent = data.footer.signature;
+        };
+        
+        // Hobi Pie Chart
+        const hobbiesCtx = document.getElementById('hobbies-chart').getContext('2d');
+        const hobbiesChart = new Chart(hobbiesCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Sepak Bola', 'Badminton', 'Nge Gym'],
+                datasets: [{
+                    data: [15, 35, 50],
+                    backgroundColor: ['#22c55e', '#86efac', '#166534'],
+                    borderColor: '#f0fdf4',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { color: '#166534' }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += context.parsed + '%';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Minat Radar Chart
+        const interestsCtx = document.getElementById('interests-radar-chart').getContext('2d');
+        const interestsRadarChart = new Chart(interestsCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Membaca Novel', 'Buku Pengetahuan', 'Komputer', 'Internet', 'Jaringan'],
+                datasets: [{
+                    label: 'Tingkat Minat (1-10)',
+                    data: [8, 9, 10, 10, 9], // Contoh data minat
+                    fill: true,
+                    backgroundColor: 'rgba(34, 197, 94, 0.4)',
+                    borderColor: 'rgb(22, 101, 52)',
+                    pointBackgroundColor: 'rgb(22, 101, 52)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(22, 101, 52)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                elements: {
+                    line: {
+                        borderWidth: 3
+                    }
+                },
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(22, 101, 52, 0.3)' },
+                        grid: { color: 'rgba(22, 101, 52, 0.3)' },
+                        pointLabels: { color: '#166534' },
+                        ticks: { display: false, beginAtZero: true, max: 10 },
+                        min: 0,
+                        max: 10
+                    }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        // Prestasi Bar Chart
+        const achievementsCtx = document.getElementById('achievements-bar-chart').getContext('2d');
+        const achievementsBarChart = new Chart(achievementsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Akademik', 'Non-Akademik'],
+                datasets: [{
+                    label: 'Jumlah Prestasi',
+                    data: [1, 1],
+                    backgroundColor: ['#22c55e', '#86efac'],
+                    borderColor: '#166534',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { stepSize: 1, color: '#166534' },
+                        grid: { color: 'rgba(22, 101, 52, 0.3)' }
+                    },
+                    x: {
+                        ticks: { color: '#166534' },
+                        grid: { display: false }
+                    }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+        
+        languageButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const lang = event.target.dataset.lang;
+                updateText(lang);
+            });
+        });
+
+        // Setel bahasa default saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            updateText('id');
+        });
+    </script>
+
+</body>
+</html>
